@@ -5,13 +5,11 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   static const HOME = _Paths.HOME;
+  static String SHOPPING_ASSISTANT = Screen.SHOPPING_ASSISTANT.route;
   // static String PROFILE = Screen.PROFILE.fullPath;
   // static String SETTINGS = Screen.SETTINGS.fullPath;
   static String LOGIN = Screen.LOGIN.route;
-<<<<<<< HEAD
   static String PERSONA_SELECTION = Screen.PERSONA_SELECTION.route;
-=======
->>>>>>> origin/main
   static String REGISTER = Screen.REGISTER.route;
   // static String DASHBOARD = Screen.DASHBOARD.fullPath;
   // static String PRODUCTS = Screen.PRODUCTS.fullPath;
@@ -21,7 +19,8 @@ abstract class Routes {
   // static const TASKS = _Paths.HOME + _Paths.TASKS;
   // static const USERS = _Paths.HOME + _Paths.USERS;
   // static const MY_PRODUCTS = _Paths.HOME + _Paths.MY_PRODUCTS;
-
+  static String SHOPPING_ASSISTANT_THEN(String afterSuccessfulLogin) =>
+      '${Screen.SHOPPING_ASSISTANT.route}?then=${Uri.encodeQueryComponent(afterSuccessfulLogin)}';
   static String PRODUCT_DETAILS(String productId) =>
       '${Screen.PRODUCTS.route}/$productId';
   static String CART_DETAILS(String productId) =>
@@ -40,10 +39,8 @@ abstract class Routes {
 // Keeping this as Get_Cli will require it. Any addition can later be added to Screen
 abstract class _Paths {
   static const String HOME = '/home';
-<<<<<<< HEAD
   static const String PERSONA_SELECTION = '/persona-selection';
-=======
->>>>>>> origin/main
+  static const String SHOPPING_ASSISTANT = '/shopping-assistant';
   // static const DASHBOARD = '/dashboard';
   // static const PRODUCTS = '/products';
   // static const PROFILE = '/profile';

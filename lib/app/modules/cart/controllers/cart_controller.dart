@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-<<<<<<< HEAD
 import '../../products/controllers/products_controller.dart';
 
 class CartController extends GetxController {
@@ -7,9 +6,11 @@ class CartController extends GetxController {
 
   RxList<CartItem> get cartItems => productsController.cartItems;
 
-  double get total => cartItems.fold(0, (sum, item) => sum + (item.product.price * item.quantity.value));
+  double get total => cartItems.fold(
+      0, (sum, item) => sum + (item.product.price * item.quantity.value));
 
-  int get itemCount => cartItems.fold(0, (sum, item) => sum + item.quantity.value);
+  int get itemCount =>
+      cartItems.fold(0, (sum, item) => sum + item.quantity.value);
 
   void removeItem(CartItem item) {
     cartItems.remove(item);
@@ -31,27 +32,3 @@ class CartController extends GetxController {
     productsController.saveCartItems();
   }
 }
-=======
-
-class CartController extends GetxController {
-  //TODO: Implement CartController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
-}
->>>>>>> origin/main

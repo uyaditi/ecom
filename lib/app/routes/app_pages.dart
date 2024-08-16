@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:get_flutter_fire/app/modules/shopping_assistant/bindings/shopping_assistant_binding.dart';
+import 'package:get_flutter_fire/app/modules/shopping_assistant/views/shopping_assistant_view.dart';
+import 'package:get_flutter_fire/app/modules/users/views/users_view.dart';
 
 import '../../models/access_level.dart';
 import '../../models/role.dart';
@@ -20,10 +23,7 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/my_products/bindings/my_products_binding.dart';
 import '../modules/my_products/views/my_products_view.dart';
-<<<<<<< HEAD
 import '../modules/persona/persona_view.dart';
-=======
->>>>>>> origin/main
 import '../modules/product_details/bindings/product_details_binding.dart';
 import '../modules/product_details/views/product_details_view.dart';
 import '../modules/products/bindings/products_binding.dart';
@@ -43,7 +43,7 @@ import '../modules/task_details/views/task_details_view.dart';
 import '../modules/tasks/bindings/tasks_binding.dart';
 import '../modules/tasks/views/tasks_view.dart';
 import '../modules/users/bindings/users_binding.dart';
-import '../modules/users/views/users_view.dart';
+import '../modules/shopping_assistant/views/shopping_assistant_view.dart';
 
 part 'app_routes.dart';
 part 'screen_extension.dart';
@@ -67,12 +67,9 @@ class AppPages {
           page: () => const LoginView(),
           binding: LoginBinding(),
         ),
-<<<<<<< HEAD
         Screen.PERSONA_SELECTION.getPage(
           page: () => const PersonaSelectionView(),
         ),
-=======
->>>>>>> origin/main
         Screen.REGISTER.getPage(
           page: () => const RegisterView(),
           binding: RegisterBinding(),
@@ -81,29 +78,22 @@ class AppPages {
           page: () => const ProfileView(),
           binding: ProfileBinding(),
         ),
-<<<<<<< HEAD
         // Screen.SETTINGS.getPage(
         //   page: () => const SettingsView(),
         //   binding: SettingsBinding(),
         // ),
-=======
-        Screen.SETTINGS.getPage(
-          page: () => const SettingsView(),
-          binding: SettingsBinding(),
-        ),
->>>>>>> origin/main
         Screen.HOME.getPage(
           page: () => const HomeView(),
           bindings: [
             HomeBinding(),
           ],
           children: [
+            Screen.SHOPPING_ASSISTANT.getPage(
+              page: () => ShoppingAssistantView(),
+              binding: ShoppingAssistantBinding(),
+            ),
             Screen.DASHBOARD.getPage(
-<<<<<<< HEAD
               page: () => DashboardView(),
-=======
-              page: () => const DashboardView(),
->>>>>>> origin/main
               binding: DashboardBinding(),
             ),
             Screen.USERS.getPage(
@@ -118,11 +108,7 @@ class AppPages {
               ],
             ),
             Screen.PRODUCTS.getPage(
-<<<<<<< HEAD
               page: () => ProductsView(),
-=======
-              page: () => const ProductsView(),
->>>>>>> origin/main
               binding: ProductsBinding(),
               children: [
                 Screen.PRODUCT_DETAILS.getPages(
@@ -137,11 +123,7 @@ class AppPages {
               binding: CategoriesBinding(),
             ),
             Screen.CART.getPage(
-<<<<<<< HEAD
               page: () => CartView(),
-=======
-              page: () => const CartView(),
->>>>>>> origin/main
               binding: CartBinding(),
               role: Role.buyer,
               children: [

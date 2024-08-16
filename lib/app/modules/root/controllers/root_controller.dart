@@ -3,11 +3,8 @@ import 'package:get/get.dart';
 
 class RootController extends GetxController {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-<<<<<<< HEAD
   final RxBool isSearchVisible = false.obs;
-   final isSearching = false.obs;
-=======
->>>>>>> origin/main
+  final isSearching = false.obs;
 
   void openDrawer() {
     scaffoldKey.currentState!.openDrawer();
@@ -16,12 +13,8 @@ class RootController extends GetxController {
   void closeDrawer() {
     scaffoldKey.currentState!.openEndDrawer();
   }
-<<<<<<< HEAD
 
   void toggleSearch() {
     isSearchVisible.toggle();
   }
 }
-=======
-}
->>>>>>> origin/main

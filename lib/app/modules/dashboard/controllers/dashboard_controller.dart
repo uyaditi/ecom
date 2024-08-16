@@ -1,5 +1,4 @@
 import 'dart:async';
-<<<<<<< HEAD
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
@@ -25,37 +24,55 @@ class DashboardController extends GetxController {
   void onInit() {
     super.onInit();
     products.value = [
-      Product('1', 'AirPods Pro', 249.99, 4.8, 'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg', 'AirPods'),
-      Product('2', 'MacBook Air', 999.99, 4.7, 'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg', 'Laptop'),
-      Product('3', 'Sony WH-1000XM4', 349.99, 4.6, 'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg', 'Headphones'),
-      Product('4', 'iPhone 13 Pro', 999.99, 4.9, 'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg', 'Phones'),
-      Product('5', 'iPad Air', 599.99, 4.5, 'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg', 'Tablets'),
+      Product(
+          '1',
+          'AirPods Pro',
+          249.99,
+          4.8,
+          'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg',
+          'AirPods'),
+      Product(
+          '2',
+          'MacBook Air',
+          999.99,
+          4.7,
+          'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg',
+          'Laptop'),
+      Product(
+          '3',
+          'Sony WH-1000XM4',
+          349.99,
+          4.6,
+          'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg',
+          'Headphones'),
+      Product(
+          '4',
+          'iPhone 13 Pro',
+          999.99,
+          4.9,
+          'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg',
+          'Phones'),
+      Product(
+          '5',
+          'iPad Air',
+          599.99,
+          4.5,
+          'https://www.uxcrush.com/wp-content/uploads/2019/08/Dark-ecommerce-Figma-app-template-1014x487.jpg',
+          'Tablets'),
     ];
     loadCartItems();
   }
 
-=======
-
-import 'package:get/get.dart';
-
-class DashboardController extends GetxController {
-  final now = DateTime.now().obs;
->>>>>>> origin/main
   @override
   void onReady() {
     super.onReady();
     Timer.periodic(
       const Duration(seconds: 1),
-<<<<<<< HEAD
-          (timer) {
-=======
       (timer) {
->>>>>>> origin/main
         now.value = DateTime.now();
       },
     );
   }
-<<<<<<< HEAD
 
   void onPageChanged(int index, CarouselPageChangedReason reason) {
     currentIndex.value = index;
@@ -74,7 +91,9 @@ class DashboardController extends GetxController {
     if (selectedCategory.value == 'All') {
       return products;
     } else {
-      return products.where((product) => product.category == selectedCategory.value).toList();
+      return products
+          .where((product) => product.category == selectedCategory.value)
+          .toList();
     }
   }
 
@@ -90,27 +109,28 @@ class DashboardController extends GetxController {
   // }
 
   void addToCart(Product product) {
-  var existingItem = cartItems.firstWhereOrNull((item) => item.product.id == product.id);
-  if (existingItem != null) {
-    existingItem.quantity.value++;
-  } else {
-    cartItems.add(CartItem(product: product, quantity: 1));
-  }
-  saveCartItems();
-  
-  // Show SnackBar with custom background color
-  Get.snackbar(
-    'Added to Cart',
-    '${product.name} has been added to your cart.',
-    backgroundColor: Colors.green, // Change this to your preferred color
-    colorText: Colors.white, // Optionally, set text color
-  );
-}
+    var existingItem =
+        cartItems.firstWhereOrNull((item) => item.product.id == product.id);
+    if (existingItem != null) {
+      existingItem.quantity.value++;
+    } else {
+      cartItems.add(CartItem(product: product, quantity: 1));
+    }
+    saveCartItems();
 
+    // Show SnackBar with custom background color
+    Get.snackbar(
+      'Added to Cart',
+      '${product.name} has been added to your cart.',
+      backgroundColor: Colors.green, // Change this to your preferred color
+      colorText: Colors.white, // Optionally, set text color
+    );
+  }
 
   void loadCartItems() {
     var savedItems = box.read<List>('cartItems') ?? [];
-    cartItems.value = savedItems.map((item) => CartItem.fromJson(item)).toList();
+    cartItems.value =
+        savedItems.map((item) => CartItem.fromJson(item)).toList();
   }
 
   void saveCartItems() {
@@ -131,9 +151,11 @@ class DashboardController extends GetxController {
     saveCartItems();
   }
 
-  double get total => cartItems.fold(0, (sum, item) => sum + (item.product.price * item.quantity.value));
+  double get total => cartItems.fold(
+      0, (sum, item) => sum + (item.product.price * item.quantity.value));
 
-  int get itemCount => cartItems.fold(0, (sum, item) => sum + item.quantity.value);
+  int get itemCount =>
+      cartItems.fold(0, (sum, item) => sum + item.quantity.value);
 }
 
 class Product {
@@ -144,7 +166,8 @@ class Product {
   final String imageUrl;
   final String category;
 
-  Product(this.id, this.name, this.price, this.rating, this.imageUrl, this.category);
+  Product(this.id, this.name, this.price, this.rating, this.imageUrl,
+      this.category);
 
   Map<String, dynamic> toJson() {
     return {
@@ -190,6 +213,3 @@ class CartItem {
     );
   }
 }
-=======
-}
->>>>>>> origin/main

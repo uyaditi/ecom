@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -26,7 +25,8 @@ class SettingsController extends GetxController {
 
   void setPersona(Persona? persona) {
     selectedPersona.value = persona;
-    box.write('personaIndex', persona == null ? -1 : customPersonas.indexOf(persona));
+    box.write(
+        'personaIndex', persona == null ? -1 : customPersonas.indexOf(persona));
     updateTheme();
   }
 
@@ -67,34 +67,12 @@ class SettingsController extends GetxController {
         ),
         scaffoldBackgroundColor: persona.backgroundColor,
         textTheme: ThemeData.light().textTheme.apply(
-          bodyColor: persona.textColor,
-          displayColor: persona.textColor,
-        ),
+              bodyColor: persona.textColor,
+              displayColor: persona.textColor,
+            ),
       ));
     } else {
       Get.changeTheme(isDarkMode.value ? ThemeData.dark() : ThemeData.light());
     }
   }
 }
-=======
-import 'package:get/get.dart';
-
-class SettingsController extends GetxController {
-  //TODO: Implement SettingsController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
-}
->>>>>>> origin/main

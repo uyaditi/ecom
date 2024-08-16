@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +33,8 @@ class LoginController extends GetxController {
 
   bool get isLoggedIn => _authService.isLoggedInValue;
   bool get isAnon => _authService.isAnon;
-  bool get isRegistered => _authService.registered.value || _authService.isEmailVerified;
+  bool get isRegistered =>
+      _authService.registered.value || _authService.isEmailVerified;
 
   @override
   void onInit() {
@@ -115,7 +115,8 @@ class LoginController extends GetxController {
 
       // Wrap _completePhoneSignIn in another try-catch block
       try {
-        _completePhoneSignIn("${selectedCountry.value.dialCode}${phoneController.text}");
+        _completePhoneSignIn(
+            "${selectedCountry.value.dialCode}${phoneController.text}");
       } catch (e) {
         print('Error in _completePhoneSignIn: $e');
         // Optionally, you can show another snackbar here if needed
@@ -127,13 +128,16 @@ class LoginController extends GetxController {
       if (e is fba.FirebaseAuthException) {
         switch (e.code) {
           case 'invalid-verification-code':
-            errorMessage = 'The verification code is invalid. Please try again.';
+            errorMessage =
+                'The verification code is invalid. Please try again.';
             break;
           case 'invalid-verification-id':
-            errorMessage = 'The verification ID is invalid. Please request a new code.';
+            errorMessage =
+                'The verification ID is invalid. Please request a new code.';
             break;
           default:
-            errorMessage = 'An error occurred during verification. Please try again.';
+            errorMessage =
+                'An error occurred during verification. Please try again.';
         }
       }
 
@@ -163,7 +167,8 @@ class LoginController extends GetxController {
 
   String? get signedInPhoneNumber => _storage.read('phoneNumber');
 
-  void errorMessage(BuildContext context, AuthFailed state, Function(bool, fba.AuthCredential?) showReverificationButton) {
+  void errorMessage(BuildContext context, AuthFailed state,
+      Function(bool, fba.AuthCredential?) showReverificationButton) {
     // Implement your error handling here
   }
 
@@ -171,25 +176,3 @@ class LoginController extends GetxController {
     // Implement sending verification mail if needed
   }
 }
-=======
-import 'package:get/get.dart';
-
-import '../../../../services/auth_service.dart';
-
-class LoginController extends GetxController {
-  static AuthService get to => Get.find();
-
-  final Rx<bool> showReverificationButton = Rx(false);
-
-  bool get isRobot => AuthService.to.robot.value == true;
-
-  set robot(bool v) => AuthService.to.robot.value = v;
-
-  bool get isLoggedIn => AuthService.to.isLoggedInValue;
-
-  bool get isAnon => AuthService.to.isAnon;
-
-  bool get isRegistered =>
-      AuthService.to.registered.value || AuthService.to.isEmailVerified;
-}
->>>>>>> origin/main

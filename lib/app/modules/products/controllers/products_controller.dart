@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ class ProductsController extends GetxController {
 
   late TextEditingController searchController;
 
-   final currentIndex = 0.obs;
+  final currentIndex = 0.obs;
   final CarouselController carouselController = CarouselController();
 
   final List<Map<String, dynamic>> imageList = [
@@ -25,40 +24,16 @@ class ProductsController extends GetxController {
     currentIndex.value = index;
   }
 
-
   @override
   void onInit() {
     super.onInit();
     searchController = TextEditingController();
     loadDemoProducts();
     loadCartItems();
-=======
-import 'package:get/get.dart';
-
-import '../../../../models/product.dart';
-
-class ProductsController extends GetxController {
-  final products = <Product>[].obs;
-
-  void loadDemoProductsFromSomeWhere() {
-    products.add(
-      Product(
-        name: 'Product added on: ${DateTime.now().toString()}',
-        id: DateTime.now().millisecondsSinceEpoch.toString(),
-      ),
-    );
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    loadDemoProductsFromSomeWhere();
->>>>>>> origin/main
   }
 
   @override
   void onClose() {
-<<<<<<< HEAD
     searchController.dispose();
     super.onClose();
   }
@@ -114,28 +89,29 @@ class ProductsController extends GetxController {
     ];
   }
 
- void addToCart(Product product) {
-  var existingItem = cartItems.firstWhereOrNull((item) => item.product.id == product.id);
-  if (existingItem != null) {
-    existingItem.quantity.value++;
-  } else {
-    cartItems.add(CartItem(product: product, quantity: 1));
-  }
-  saveCartItems();
-  
-  // Show SnackBar with custom background color
-  Get.snackbar(
-    'Added to Cart',
-    '${product.name} has been added to your cart.',
-    backgroundColor: Color.fromARGB(255, 232, 252, 243), 
-    colorText: Color.fromARGB(255, 15, 43, 16), 
-  );
-}
+  void addToCart(Product product) {
+    var existingItem =
+        cartItems.firstWhereOrNull((item) => item.product.id == product.id);
+    if (existingItem != null) {
+      existingItem.quantity.value++;
+    } else {
+      cartItems.add(CartItem(product: product, quantity: 1));
+    }
+    saveCartItems();
 
+    // Show SnackBar with custom background color
+    Get.snackbar(
+      'Added to Cart',
+      '${product.name} has been added to your cart.',
+      backgroundColor: Color.fromARGB(255, 232, 252, 243),
+      colorText: Color.fromARGB(255, 15, 43, 16),
+    );
+  }
 
   void loadCartItems() {
     var savedItems = box.read<List>('cartItems') ?? [];
-    cartItems.value = savedItems.map((item) => CartItem.fromJson(item)).toList();
+    cartItems.value =
+        savedItems.map((item) => CartItem.fromJson(item)).toList();
   }
 
   void saveCartItems() {
@@ -200,9 +176,3 @@ class CartItem {
     );
   }
 }
-=======
-    Get.printInfo(info: 'Products: onClose');
-    super.onClose();
-  }
-}
->>>>>>> origin/main

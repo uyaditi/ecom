@@ -22,6 +22,12 @@ enum AccessedVia {
 
 enum Screen implements ActionEnum {
   NONE.none(), //null
+  SHOPPING_ASSISTANT('/shopping-assistant',
+      icon: Icons.chat,
+      label: "Shopping Assistant",
+      accessor_: AccessedVia.navigator,
+      accessLevel: AccessLevel.authenticated,
+      parent: HOME),
   HOME('/home',
       icon: Icons.home,
       label: "Home",
@@ -33,14 +39,11 @@ enum Screen implements ActionEnum {
       accessor_: AccessedVia.navigator,
       accessLevel: AccessLevel.public,
       parent: HOME),
-<<<<<<< HEAD
   PERSONA_SELECTION('/persona-selection',
       icon: Icons.color_lens,
       label: "Persona Selection",
       accessor_: AccessedVia.drawer,
       accessLevel: AccessLevel.authenticated),
-=======
->>>>>>> origin/main
   PRODUCTS('/products',
       icon: Icons.dataset,
       label: "Products",
