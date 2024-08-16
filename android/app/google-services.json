@@ -1,48 +1,40 @@
 {
   "project_info": {
-    "project_number": "113147469202",
-    "project_id": "sharekhan-21354",
-    "storage_bucket": "sharekhan-21354.appspot.com"
+    "project_number": "444350384804",
+    "project_id": "getfire-2c177",
+    "storage_bucket": "getfire-2c177.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:113147469202:android:478b2874b76ada9f3e754b",
+        "mobilesdk_app_id": "1:444350384804:android:1354d216e379975421b431",
         "android_client_info": {
-          "package_name": "com.app"
+          "package_name": "com.example.ecom"
         }
       },
       "oauth_client": [
         {
-          "client_id": "113147469202-pldtit1ova3u402uhbssmfjmc38gkfj1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.app",
-            "certificate_hash": "f3f92e860524e6136dc7dba3289d03047ae81f2c"
-          }
-        },
-        {
-          "client_id": "113147469202-a3evmrn6rfr8ffb8t1o6ur3mcu1keefq.apps.googleusercontent.com",
+          "client_id": "444350384804-voa872lg04skjsjcbgphrqotjqtivrsv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAIVCDMz4vrFdNZ7Ra2lR7CtV1z0tL-mb0"
+          "current_key": "AIzaSyC9A_kRFXnNLajpn-Cy4caUj9k9y6gepV8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "113147469202-a3evmrn6rfr8ffb8t1o6ur3mcu1keefq.apps.googleusercontent.com",
+              "client_id": "444350384804-voa872lg04skjsjcbgphrqotjqtivrsv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "113147469202-5qck9rpdt7er0lgjmvf3uvif7pfo60io.apps.googleusercontent.com",
+              "client_id": "444350384804-7juphsmi6b33u8v6rl7kkd5389i2atou.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.app"
+                "bundle_id": "com.example.getFlutterFire.RunnerTests"
               }
             }
           ]
@@ -51,34 +43,42 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:113147469202:android:59bf3e6919f018793e754b",
+        "mobilesdk_app_id": "1:444350384804:android:47399da486dd5bf121b431",
         "android_client_info": {
-          "package_name": "com.app"
+          "package_name": "com.example.get_flutter_fire"
         }
       },
       "oauth_client": [
         {
-          "client_id": "113147469202-a3evmrn6rfr8ffb8t1o6ur3mcu1keefq.apps.googleusercontent.com",
+          "client_id": "444350384804-450p3s3ufiidabhnvbbcnb19nj397c6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.get_flutter_fire",
+            "certificate_hash": "ce8a3f42c6f747087f4963c1e46aa6e637d9e995"
+          }
+        },
+        {
+          "client_id": "444350384804-voa872lg04skjsjcbgphrqotjqtivrsv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAIVCDMz4vrFdNZ7Ra2lR7CtV1z0tL-mb0"
+          "current_key": "AIzaSyC9A_kRFXnNLajpn-Cy4caUj9k9y6gepV8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "113147469202-a3evmrn6rfr8ffb8t1o6ur3mcu1keefq.apps.googleusercontent.com",
+              "client_id": "444350384804-voa872lg04skjsjcbgphrqotjqtivrsv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "113147469202-5qck9rpdt7er0lgjmvf3uvif7pfo60io.apps.googleusercontent.com",
+              "client_id": "444350384804-7juphsmi6b33u8v6rl7kkd5389i2atou.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.app"
+                "bundle_id": "com.example.getFlutterFire.RunnerTests"
               }
             }
           ]

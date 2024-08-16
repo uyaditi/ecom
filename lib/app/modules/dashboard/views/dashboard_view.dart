@@ -6,6 +6,7 @@ import 'package:get_flutter_fire/app/modules/products/controllers/products_contr
 import 'package:get_flutter_fire/app/modules/settings/controllers/settings_controller.dart';
 import 'package:get_flutter_fire/app/modules/shopping_assistant/views/shopping_assistant_view.dart';
 import '../../root/controllers/root_controller.dart';
+import '../../shopping_assistant/controllers/shopping_assistant_controller.dart';
 
 class DashboardView extends GetView<ProductsController> {
   DashboardView({Key? key}) : super(key: key);
@@ -68,7 +69,6 @@ class DashboardView extends GetView<ProductsController> {
                       ),
                     );
                   }).toList(),
-                  carouselController: controller.carouselController,
                   options: CarouselOptions(
                       scrollPhysics: const BouncingScrollPhysics(),
                       autoPlay: true,
@@ -220,6 +220,7 @@ class DashboardView extends GetView<ProductsController> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
+              Get.put(ShoppingAssistantController()); // Initialize the controller
               Get.to(() => ShoppingAssistantView());
             },
             child: Icon(Icons.chat),
